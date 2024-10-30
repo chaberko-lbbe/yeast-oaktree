@@ -4,59 +4,23 @@
 
 ## 1 - Download the data
 
-Raw reads were deposited on NCBI's Sequence Read Archive (SRA) database under BioProject PRJNA1114957:
-
+Raw reads were deposited on NCBI's Sequence Read Archive (SRA) database under BioProject PRJNA1114957.
 
 ## 2 - Download the software(s)
 
 You will need: nf-core, R (Nextflow)
 
-
 ## 3 - Run nf-core/ampliseq
 
 The data needs to be detailed in a samplesheet.
 
-Our samples are named with numbers from 101 to 194
-So, we are creating a file with those numbers:
-```{bash}
-seq -f "%02g" 1 94 > List.txt # 01 to 94
-```
-
-Then, we create the file Samplesheet.tsv:
-```{python}
-input_file = 'List.txt'
-output_file = 'Samplesheet.tsv'
-
-with open(input_file, 'r') as in_file, open(output_file, 'w') as out_file:
-    for line in in_file:
-        line = line.strip()
-        output_line = "1{}\t/your-path/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_1{}/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_1{}_S{}_L001_R1_001.fastq.gz\t/your-path/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_1{}/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_1{}_S{}_L001_R2_001.fastq.gz".format(line, line, line, line, line, line,line,line)
-        out_file.write(output_line + '\n')
-```
-
-Giving something like that:
-> /your-path/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S01_L001_R1_001.fastq.gz
-
-We have to mannually correct samples 1 to 9!
-> /your-path/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S1_L001_R1_001.fastq.gz
-
-Add this line on top (using nano):
+Our samples are named with numbers from 101 to 194, so we need to create the file Samplesheet.tsv:
 sampleID	forwardReads	reverseReads
+S101	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S1_L001_R1_001.fastq.gz	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S1_L001_R2_001.fastq.gz
+S102	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_102/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_102_S2_L001_R1_001.fastq.gz	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_102/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_102_S2_L001_R2_001.fastq.gz
+(...)
 
-And finally, add a letter before sampleID:
-```{bash}
-awk 'BEGIN { OFS="\t" } NR==1 { print $1, $2, $3 } NR>1 { printf "S%03d\t%s\t%s\n", $1, $2, $3 }' Samplesheet_old.tsv > Samplesheet.tsv
-```
-
-Finally, we can create a bash script:
-```{bash}
-nextflow run nf-core/ampliseq -r dev\
- -profile test,uppmax --project naiss2023-22-1116\
- --input "/your-path/MetaOak/Samplesheet.tsv"\
- --outdir "/your-path/MetaOak/results"
-```
-
-Now we can run this script with the true dataset:
+Now we can run this script on our data:
 ```{bash}
 nextflow run nf-core/ampliseq\
  -r dev -profile uppmax --project naiss2023-22-1116\
@@ -68,7 +32,7 @@ nextflow run nf-core/ampliseq\
  --outdir "/your-path/MetaOak/results"
 ```
 
-Default setting for taxonomic classification is DADA2 with the SILVA reference taxonomy database. Instead, we use 'unite-fungi' (eukaryotic nuclear ribosomal ITS region)
+Default setting for taxonomic classification is DADA2 with the SILVA reference taxonomy database. Instead, we use 'unite-fungi' (eukaryotic nuclear ribosomal ITS region).
 
 Running with nf-core/ampliseq v2.9.0dev-g2a23b1b
 
@@ -95,7 +59,6 @@ samples_infos <- samples_infos[,c(2,3)]
 We can first check where are the hits located.
 
 The resulting abundance and taxonomy tables can be imported into R studio for further analysis.
-Also see this tutorial: https://rpubs.com/mrgambero/taxa_alpha_beta
 
 ```{r}
 library(vegan)
