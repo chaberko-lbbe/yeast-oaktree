@@ -16,10 +16,12 @@ The data needs to be detailed in a samplesheet.
 
 Our samples are named with numbers from 101 to 194, so we need to create the file Samplesheet.tsv:
 
-> sampleID	forwardReads	reverseReads
-> S101	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S1_L001_R1_001.fastq.gz	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S1_L001_R2_001.fastq.gz
-> S102	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_102/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_102_S2_L001_R1_001.fastq.gz	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_102/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_102_S2_L001_R2_001.fastq.gz
+```
+sampleID	forwardReads	reverseReads
+S101	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S1_L001_R1_001.fastq.gz	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_101/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_101_S1_L001_R2_001.fastq.gz
+S102	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_102/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_102_S2_L001_R1_001.fastq.gz	/proj/yeast-genomics/MetaOak/DataDelivery_2024-02-13_15-39-23_ngisthlm00569/files/P30009/P30009_102/02-FASTQ/240209_VH00203_376_AAFFLMLM5/P30009_102_S2_L001_R2_001.fastq.gz
 (...)
+```
 
 Now we can run this script on our data:
 ```{bash}
