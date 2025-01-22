@@ -1,6 +1,6 @@
 # yeast-oaktree
 
-Bioinformatic Pipeline associated to the paper "Fermentative yeast diversity at the northern range limit of their oak tree hosts" (Pinto, Haberkorn et al. 2025)
+Bioinformatic Pipeline associated to the paper "Fermentative yeast diversity at the northern range limit of their oak tree hosts" (Pinto, Haberkorn et al., in prep)
 
 [Update 22/01/2025: the associated files ASV_table.tsv, ASV_tax.unite-fungi.tsv, DADA2_table.rds and metadata_clean.xlsx will be shared here upon publication of the paper]
 
@@ -15,7 +15,7 @@ Javier Pinto<sup>†1</sup>, Chloé Haberkorn<sup>†1</sup>, Markus Franzén<su
 
 ## 1 - Download the data
 
-Raw reads were deposited on NCBI's Sequence Read Archive (SRA) database under BioProject PRJNA1114957:
+Raw reads were deposited on NCBI's Sequence Read Archive (SRA) database under BioProject PRJNA1114957: [Update 22/01/2025: link will be shared here upon publication of the paper]
 
 
 ## 2 - Download the software(s)
