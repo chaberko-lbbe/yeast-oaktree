@@ -1,6 +1,12 @@
 # yeast-oaktree
+Bioinformatic Pipeline associated to the paper "Fermentative yeast diversity at the northern range limit of their oak tree hosts" (Pinto, Haberkorn et al. 2025)
+Javier Pinto1†, Chloé Haberkorn1†, Markus Franzén2, Ayco J. M. Tack3, Rike Stelkens1*
+1 Department of Zoology, Stockholm University, Svante Arrheniusväg 18 B, 106 91 Stockholm, Sweden
+2 Center for Ecology and Evolution in Microbial Model Systems, Department of Biology and Environmental Science, Linnaeus University, Kalmar, Sweden
+3 Department of Ecology, Environment and Plant Sciences, Stockholm University, SE-106 91 Stockholm, Sweden
+† J.P. and C.H. contributed equally to this work.
+* Corresponding author: Rike Stelkens, Department of Zoology, Stockholm University, Sweden; email: rike.stelkens@zoologi.su.se
 
-# Bioinformatic Pipeline associated to the Metabarcoding Project on Oak Tree
 
 ## 1 - Download the data
 
