@@ -1,5 +1,8 @@
 # yeast-oaktree
+
 Bioinformatic Pipeline associated to the paper "Fermentative yeast diversity at the northern range limit of their oak tree hosts" (Pinto, Haberkorn et al. 2025)
+
+[Update 22/01/2025: the associated files ASV_table.tsv, ASV_tax.unite-fungi.tsv, DADA2_table.rds and metadata_clean.xlsx will be shared here upon publication of the paper]
 
 Javier Pinto<sup>†1</sup>, Chloé Haberkorn<sup>†1</sup>, Markus Franzén<sup>2</sup>, Ayco J. M. Tack<sup>3</sup>, Rike Stelkens<sup>1*</sup>
 
@@ -208,7 +211,7 @@ species_tab_clean <- species_tab_clean %>%
 Containing samples ID, location data (longitude/latitude), diversity indexes, information on host trees, on insularity, on temperature and precipitation data, and dominant genus
 
 ```{r}
-metadata_clean <- read.xlsx("~/Desktop/POSTDOC/#2 Project Oaktree/metadata_clean_180125.xlsx")
+metadata_clean <- read.xlsx("~/Desktop/POSTDOC/#2 Project Oaktree/metadata_clean.xlsx")
 ```
 
 
