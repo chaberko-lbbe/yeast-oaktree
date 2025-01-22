@@ -1,12 +1,12 @@
 # yeast-oaktree
 Bioinformatic Pipeline associated to the paper "Fermentative yeast diversity at the northern range limit of their oak tree hosts" (Pinto, Haberkorn et al. 2025)
 
-Javier Pinto<sup>1†</sup>, Chloé Haberkorn<sup>1†</sup>, Markus Franzén<sup>2</sup>, Ayco J. M. Tack<sup>3</sup>, Rike Stelkens<sup>1*</sup>
+Javier Pinto<sup>†1</sup>, Chloé Haberkorn<sup>†1</sup>, Markus Franzén<sup>2</sup>, Ayco J. M. Tack<sup>3</sup>, Rike Stelkens<sup>1*</sup>
 
-<sup>1</sup>Department of Zoology, Stockholm University, Svante Arrheniusväg 18 B, 106 91 Stockholm, Sweden
-<sup>2</sup>Center for Ecology and Evolution in Microbial Model Systems, Department of Biology and Environmental Science, Linnaeus University, Kalmar, Sweden
-<sup>3</sup>Department of Ecology, Environment and Plant Sciences, Stockholm University, SE-106 91 Stockholm, Sweden
-<sup>†</sup>J.P. and C.H. contributed equally to this work.
+<sup>†</sup>J.P. and C.H. contributed equally to this work ;
+<sup>1</sup>Department of Zoology, Stockholm University, Svante Arrheniusväg 18 B, 106 91 Stockholm, Sweden ;
+<sup>2</sup>Center for Ecology and Evolution in Microbial Model Systems, Department of Biology and Environmental Science, Linnaeus University, Kalmar, Sweden ;
+<sup>3</sup>Department of Ecology, Environment and Plant Sciences, Stockholm University, SE-106 91 Stockholm, Sweden ;
 <sup>*</sup>Corresponding author: Rike Stelkens, Department of Zoology, Stockholm University, Sweden; email: rike.stelkens@zoologi.su.se
 
 
