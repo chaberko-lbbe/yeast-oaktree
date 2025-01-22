@@ -123,7 +123,6 @@ samples_infos <- samples_infos[,c(2,3)]
 We can first check where are the hits located.
 
 The resulting abundance and taxonomy tables can be imported into R studio for further analysis.
-Also see this tutorial: https://rpubs.com/mrgambero/taxa_alpha_beta
 
 ```{r}
 setwd("/your-path/")
@@ -291,8 +290,6 @@ colnames(filtered_data)[1] <- "Sample"
 filtered_data <- subset(filtered_data,!(Sample %in% c("LANY_1","TAN_1","VASV_1")))
 
 nmds <- metaMDS(asv_matrix, distance = "bray", k = 2, trymax = 1000)
-# Run 357 stress 0.1707845 
-# ... Procrustes: rmse 0.001342651  max resid 0.006971928 
 
 nmds_scores <- as.data.frame(scores(nmds))
 nmds_scores$Sample <- rownames(nmds_scores)
