@@ -528,13 +528,7 @@ genus_tab_melted$group = metadata_clean$loc[match(genus_tab_melted$Sample,
                                                   metadata_clean$User.ID)]
 
 # Save all the plots separately
-loc <- read.xlsx("/your-path/bark_2024_yeasts.xlsx", sheetName = "temperature")
-loc <- loc[,2:5]
-loc$field_2[loc$field_1=="STH"] <- "Strömsholden"
-loc$field_2[loc$field_1=="STR"] <- "Strömsrum"
-
-genus_tab_melted <- merge(genus_tab_melted, loc, by.x="group", by.y="field_1")
-samples <- unique(genus_tab_melted$field_2)
+samples <- unique(metadata_clean$Place_name)
 
 df = data.frame()
 groups <- unique(genus_tab_melted$group)
@@ -549,13 +543,13 @@ for (grup in groups) {
 # mean of percentage, not cumulated nb 
 # (to account for the fact that different samples have different number of total ASV)
 df2 <- df %>%
-  dplyr::group_by(group,Genus,field_2) %>%
+  dplyr::group_by(group,Genus,Place_name) %>%
   dplyr::summarize(percent2 = mean(percent), val2 = sum(value))
 
 # Loop through each sample, plot, and save as SVG
 for (sample in samples) {
 
-   sample_data <- subset(df2, field_2 == sample)
+   sample_data <- subset(df2, Place_name == sample)
     
    p2 <- ggplot(sample_data, aes(x="", y=percent2, fill=Genus)) +
       geom_bar(stat="identity", width=1, color="white") +
@@ -565,7 +559,7 @@ for (sample in samples) {
       theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(),  
             axis.title.x = element_blank(),  axis.title.y = element_blank(),
             legend.position = "none") +
-      ggtitle(unique(sample_data$field_2))
+      ggtitle(unique(sample_data$Place_name))
     
     ggsave(filename = paste0("Pie_", sample, ".svg"), plot = p2, device = "svg", width = 2, height = 2)
 }
